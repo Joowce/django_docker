@@ -37,12 +37,12 @@ GET /
 ```
 
 DB가 필요하지 않은 간단한 API이므로 `views.py` 및 `urls.py`만 수정
-
--------------------------------------------------
 #### TODO
 * DB를 연결해 **CRUD** 구현
 * **django-swagger** 추가
 
+
+-------------------------------------------------
 ## Docker
 #### Dockerfile
 ```
@@ -56,11 +56,11 @@ RUN pip install -r requirements.txt
 
 [**docker + django**](https://docs.docker.com/compose/django/#create-a-django-project) 참조
 
-**python3**가 설치되어 있는 `python:3` 이미지를 베이스이미지로 설정
-django app이 저장된 **django_app**를 **/app**에 옮긴다
-해당 directory로 위치를 변경해, **requirement.txt**를 통해 dependencies을 설치
+**python3**가 설치되어 있는 `python:3` 이미지를 베이스이미지로 설정  
+django app이 저장된 **django_app**를 **/app**에 옮긴다  
+해당 directory로 위치를 변경해, **requirement.txt**를 통해 dependencies을 설치  
 
-> 현재는 docker에 django app만 설치하고 배포하므로 `virtual env`를 따로 설치하지 않았음
+> 현재는 docker에 django app만 설치하고 배포하므로 `virtual env`를 따로 설치하지 않았음  
 후에 `gunicorn`으로 **wsgi**대체
 
 #### docker-compose.yml
@@ -74,5 +74,5 @@ services:
     ports:
       - "8000:8000"
 ```
-같은 directory에 있는 Dockerfile로 build
+같은 directory에 있는 Dockerfile로 build  
 외부포트 8000번과 내부포트 8000번 연결
